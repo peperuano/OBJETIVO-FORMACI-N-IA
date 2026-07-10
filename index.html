@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modelo de Objetivos de Formación en IA 2026 · CC People · Stratesys</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+--black:#0A0A0A;--black-soft:#111111;--black-card:#161616;--black-hover:#1E1E1E;
+--white:#FFFFFF;--grey-1:#A0A0A0;--grey-2:#5E5E5E;--grey-3:#2A2A2A;
+--accent:#00A2FF;--accent-teal:#16E7CF;--accent-warn:#F59E0B;--accent-ok:#10B981;--accent-risk:#EF4444;
+--gradient:linear-gradient(135deg,#00A2FF 0%,#16E7CF 100%);
+--font:'Inter',-apple-system,sans-serif;--radius:4px;--radius-lg:12px;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--font);line-height:1.6;-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+padding:1rem 3rem;background:rgba(10,10,10,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--grey-3)}
+.nav-left{display:flex;align-items:center;gap:1.25rem}
+.nav-logo{font-size:1.3rem;font-weight:800;letter-spacing:-.04em;color:#FFF;text-decoration:none}
+.nav-sep{width:1px;height:22px;background:var(--grey-3)}
+.nav-tag{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--grey-1)}
+.nav-links{display:flex;list-style:none;gap:1.75rem;align-items:center}
+.nav-links a{color:var(--grey-1);text-decoration:none;font-size:.85rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:#FFF}
+.nav-links a.cta{background:var(--accent);color:#FFF;padding:.5rem 1.1rem;border-radius:var(--radius);font-weight:600}
+.nav-links a.cta:hover{background:#0090e0}
+section{padding:6rem 3rem}
+.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding-top:9rem;
+background:radial-gradient(ellipse 60% 50% at 70% 20%,rgba(0,162,255,.10),transparent),var(--black)}
+.hero-kicker{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);
+margin-bottom:1.5rem;display:flex;align-items:center;gap:.6rem}
+.hero-kicker::before{content:"";display:block;width:24px;height:1px;background:var(--accent)}
+h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;letter-spacing:-.035em;line-height:1.08;max-width:900px}
+h1 .grad{background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{margin-top:1.5rem;font-size:1.08rem;color:var(--grey-1);max-width:720px;line-height:1.75}
+.hero-meta{margin-top:2.5rem;display:flex;gap:2.5rem;flex-wrap:wrap}
+.hm{border-left:2px solid var(--grey-3);padding-left:1rem}
+.hm b{display:block;font-size:1.25rem;font-weight:800;letter-spacing:-.02em}
+.hm span{font-size:.78rem;color:var(--grey-1)}
+.index-cards{padding:0 3rem 5rem}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.25rem;max-width:1200px;margin:0 auto}
+.index-card{background:var(--black-card);border:1px solid var(--grey-3);border-radius:var(--radius-lg);
+padding:1.75rem;text-decoration:none;color:#FFF;transition:.25s;display:flex;flex-direction:column;gap:.7rem}
+.index-card:hover{background:var(--black-hover);border-color:var(--accent);transform:translateY(-3px)}
+.ic-icon{width:44px;height:44px;border-radius:10px;background:rgba(0,162,255,.12);display:flex;align-items:center;justify-content:center}
+.ic-title{font-weight:700;font-size:1.02rem;letter-spacing:-.01em}
+.ic-desc{font-size:.84rem;color:var(--grey-1);line-height:1.6;flex:1}
+.ic-cta{font-size:.8rem;font-weight:600;color:var(--accent)}
+hr{border:none;border-top:1px solid var(--grey-3)}
+.sec-inner{max-width:1200px;margin:0 auto}
+.sec-kicker{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);
+margin-bottom:1.2rem;display:flex;align-items:center;gap:.5rem}
+.sec-kicker::before{content:"";display:block;width:18px;height:1px;background:var(--accent)}
+h2{font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:800;letter-spacing:-.03em;line-height:1.15;margin-bottom:1rem}
+.sec-lead{color:var(--grey-1);font-size:1rem;line-height:1.75;max-width:780px;margin-bottom:3rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem}
+.card{background:var(--black-card);border:1px solid var(--grey-3);border-radius:var(--radius-lg);padding:1.75rem}
+.card h3{font-size:1rem;font-weight:700;margin-bottom:.6rem;letter-spacing:-.01em}
+.card p,.card li{font-size:.88rem;color:var(--grey-1);line-height:1.7}
+.card ul{padding-left:1.1rem;display:flex;flex-direction:column;gap:.4rem}
+.big-num{font-size:2.4rem;font-weight:800;letter-spacing:-.03em;background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
+.formula{display:flex;align-items:stretch;gap:1rem;flex-wrap:wrap;margin:2.5rem 0}
+.f-box{flex:1;min-width:220px;background:var(--black-card);border:1px solid var(--grey-3);border-radius:var(--radius-lg);padding:1.75rem;text-align:center}
+.f-box .pct{font-size:2.6rem;font-weight:800;letter-spacing:-.03em}
+.f-box.a .pct{color:var(--accent)} .f-box.b .pct{color:var(--accent-teal)} .f-box.c .pct{background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
+.f-box .lbl{font-size:.92rem;font-weight:700;margin-top:.3rem}
+.f-box .dsc{font-size:.8rem;color:var(--grey-1);margin-top:.6rem;line-height:1.6}
+.f-op{display:flex;align-items:center;font-size:2rem;font-weight:800;color:var(--grey-2)}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+th{background:var(--black-hover);color:#FFF;text-align:left;padding:.75rem .9rem;font-weight:700;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid var(--grey-3)}
+td{padding:.75rem .9rem;border-bottom:1px solid var(--grey-3);color:var(--grey-1);vertical-align:top}
+td b{color:#FFF;font-weight:600}
+.pill{display:inline-block;padding:.15rem .6rem;border-radius:99px;font-size:.72rem;font-weight:600}
+.pill.ok{background:rgba(16,185,129,.15);color:var(--accent-ok)}
+.pill.warn{background:rgba(245,158,11,.15);color:var(--accent-warn)}
+.pill.blue{background:rgba(0,162,255,.15);color:var(--accent)}
+.timeline{margin-top:2.5rem;overflow-x:auto}
+.tl-grid{display:grid;grid-template-columns:210px repeat(6,1fr);gap:4px;min-width:760px}
+.tl-h{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--grey-1);text-align:center;padding:.4rem 0}
+.tl-lbl{font-size:.8rem;color:#FFF;font-weight:600;display:flex;align-items:center;padding:.35rem .5rem;line-height:1.35}
+.tl-cell{border-radius:3px;background:var(--black-card);min-height:30px}
+.tl-cell.prep{background:rgba(0,162,255,.35)} .tl-cell.exec{background:rgba(0,162,255,.75)}
+.tl-cell.done{background:var(--accent-ok)}
+.tl-cell.hito-dot{position:relative;background:var(--black-card)}
+.tl-cell.hito-dot span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:16px;height:16px;background:var(--accent-warn);transform-origin:center;transform:translate(-50%,-50%) rotate(45deg);box-shadow:0 0 0 3px rgba(245,158,11,.25)}
+.legend{display:flex;gap:1.5rem;margin-top:1.2rem;flex-wrap:wrap;font-size:.78rem;color:var(--grey-1)}
+.legend span{display:inline-flex;align-items:center;gap:.45rem}
+.dot{width:12px;height:12px;border-radius:3px;display:inline-block}
+.cta-box{padding:6rem 3rem;background:var(--black-soft);text-align:center}
+.cta-inner{max-width:820px;margin:0 auto}
+.decision-list{text-align:left;margin:2.5rem auto 0;max-width:640px;display:flex;flex-direction:column;gap:1rem}
+.d-item{display:flex;gap:1rem;background:var(--black-card);border:1px solid var(--grey-3);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;align-items:flex-start}
+.d-item .n{width:28px;height:28px;border-radius:50%;background:var(--accent);color:#FFF;font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem}
+.d-item p{font-size:.9rem;color:var(--grey-1)} .d-item b{color:#FFF}
+footer{padding:3rem;border-top:1px solid var(--grey-3);text-align:center}
+.fl{font-weight:800;letter-spacing:-.04em;font-size:1.1rem;margin-bottom:.5rem}
+.fc a{color:var(--accent);text-decoration:none;font-size:.85rem}
+.fd{margin-top:.8rem;font-size:.75rem;color:var(--grey-2);max-width:640px;margin-left:auto;margin-right:auto;line-height:1.6}
+.anim{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.anim.vis{opacity:1;transform:none}
+@media(max-width:820px){nav{padding:1rem 1.25rem}.nav-links{display:none}section,.index-cards,.cta-box{padding-left:1.25rem;padding-right:1.25rem}.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <a href="#inicio" class="nav-logo">stratesys</a>
+    <div class="nav-sep"></div>
+    <div class="nav-tag">Centro de Competencia People</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#modelo">El Modelo</a></li>
+    <li><a href="#catalogo">Catálogo</a></li>
+    <li><a href="#seguimiento">Seguimiento</a></li>
+    <li><a href="#decision" class="cta">Decisión solicitada</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="inicio">
+  <div class="sec-inner">
+    <div class="hero-kicker">Propuesta para aprobación · Julio 2026</div>
+    <h1>Objetivos de Formación en <span class="grad">Inteligencia Artificial</span> 2026</h1>
+    <p class="hero-sub">Modelo del objetivo profesional anual «Formación en IA» 2026, aplicable a los empleados del Centro de
+    Competencia People que lo tienen asignado, vinculado al salario variable y alineado con el Nuevo Modelo
+    Organizativo 2026. La comunicación del objetivo corresponde a los Chapter Leads.</p>
+    <div class="hero-meta">
+      <div class="hm"><b>27</b><span>Empleados con objetivo IA asignado</span></div>
+      <div class="hm"><b>23</b><span>Cursos y certificaciones externas</span></div>
+      <div class="hm"><b>0 €</b><span>Coste de la formación</span></div>
+      <div class="hm"><b>100% online</b><span>Sin modalidad presencial</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="index-cards">
+  <div class="index-grid">
+    <a href="#modelo" class="index-card anim">
+      <div class="ic-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00A2FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div>
+      <div class="ic-title">El Modelo del Objetivo</div>
+      <div class="ic-desc">Formación acreditada + caso práctico aplicado al puesto. 40% formación + 60% caso práctico = objetivo al 100%.</div>
+      <div class="ic-cta">Ver modelo →</div>
+    </a>
+    <a href="#catalogo" class="index-card anim">
+      <div class="ic-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00A2FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+      <div class="ic-title">El Catálogo</div>
+      <div class="ic-desc">23 formaciones de proveedores externos de referencia, gratuitas y por categoría profesional.</div>
+      <div class="ic-cta">Ver catálogo →</div>
+    </a>
+    <a href="#seguimiento" class="index-card anim">
+      <div class="ic-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00A2FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
+      <div class="ic-title">Seguimiento y Gobierno</div>
+      <div class="ic-desc">Herramienta de asignación y cuadro de mando, con línea temporal e hitos trimestrales.</div>
+      <div class="ic-cta">Ver seguimiento →</div>
+    </a>
+    <a href="#decision" class="index-card anim">
+      <div class="ic-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00A2FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="ic-title">Decisión Solicitada</div>
+      <div class="ic-desc">Qué se pide aprobar y próximos pasos para el despliegue en el CC People.</div>
+      <div class="ic-cta">Ver decisión →</div>
+    </a>
+  </div>
+</div>
+
+<hr id="modelo">
+<section>
+  <div class="sec-inner">
+    <div class="sec-kicker">01 · El Modelo del Objetivo</div>
+    <h2>Aprender y aplicar: un solo objetivo, dos evidencias</h2>
+    <p class="sec-lead">Cada empleado tendrá asignado un objetivo profesional anual 2026 que combina la superación
+    de una formación externa acreditada con la aplicación real de lo aprendido a sus funciones. Solo la suma de
+    ambas partes supone la consecución total del objetivo y, con ella, el devengo del variable asociado.</p>
+
+    <div class="card anim" style="margin-bottom:2.5rem;border-color:var(--accent);display:flex;gap:1.25rem;align-items:flex-start">
+      <div style="width:44px;height:44px;border-radius:10px;background:rgba(0,162,255,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00A2FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+      </div>
+      <div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:.4rem">Paso 0 — Autoevaluación de competencias en <a href="https://skillrank.app/" style="color:var(--accent);text-decoration:none">SkillRank</a></h3>
+        <p style="font-size:.88rem;color:var(--grey-1);line-height:1.7">Antes de elegir el curso, todos los empleados con el objetivo asignado deben autoevaluar sus competencias en IA en SkillRank (skillrank.app). Esta evaluación inicial orienta la elección del nivel adecuado y permite medir el progreso al cierre del objetivo.</p>
+      </div>
+    </div>
+
+    <div class="formula anim">
+      <div class="f-box a"><div class="pct">40%</div><div class="lbl">Formación / Certificación</div>
+        <div class="dsc">Curso del catálogo elegido por el empleado según su categoría, acreditado con el certificado, título o badge del proveedor.</div></div>
+      <div class="f-op">+</div>
+      <div class="f-box b"><div class="pct">60%</div><div class="lbl">Caso práctico validado</div>
+        <div class="dsc">Aplicación documentada de lo aprendido al trabajo diario, definida por categoría y validada por el Chapter Lead.</div></div>
+      <div class="f-op">=</div>
+      <div class="f-box c"><div class="pct">100%</div><div class="lbl">Objetivo conseguido</div>
+        <div class="dsc">Consecución parcial supone un máximo del 40% (solo formación) o del 60% (solo caso práctico).</div></div>
+    </div>
+
+    <div class="grid3">
+      <div class="card anim"><h3>Reglas del modelo</h3>
+        <ul><li>Formación 100% online — sin modalidad presencial</li>
+        <li>Sin coste para el empleado ni para la compañía</li>
+        <li>Impartida solo por proveedores externos de referencia</li>
+        <li>Duración en semanas, coherente con un objetivo anual</li></ul></div>
+      <div class="card anim"><h3>Elección del empleado</h3>
+        <p>Cada categoría dispone de 3-4 opciones de formación entre las que elegir, desde nivel inicial genérico
+        hasta opciones avanzadas y específicas del stack SAP HCM / SuccessFactors, más un módulo común de IA responsable. Además, el empleado puede proponer un curso alternativo fuera del catálogo cuando exista una afinidad personal intensa con la materia y el Chapter Lead valore que el reto es suficiente para un objetivo anual.</p></div>
+      <div class="card anim"><h3>Vinculación al variable</h3>
+        <p>El grado de consecución (0% / 40% / 60% / 100%) se registra en el sistema de gestión del desempeño y alimenta
+        el cálculo del salario variable conforme a la política retributiva vigente.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr id="catalogo">
+<section style="background:var(--black-soft)">
+  <div class="sec-inner">
+    <div class="sec-kicker">02 · El Catálogo</div>
+    <h2>23 formaciones externas, gratuitas y verificadas</h2>
+    <p class="sec-lead">El catálogo cubre varios tipos de IA — no se limita a una tecnología — y está construido
+    sobre la realidad del CC People: consultoría SAP HCM y SuccessFactors, con Microsoft Copilot como IA corporativa.
+    Todos los enlaces han sido verificados como gratuitos y con acreditación de finalización.</p>
+
+    <div style="overflow-x:auto" class="anim">
+    <table>
+      <tr><th>Proveedor</th><th>Enfoque</th><th>Ejemplos</th></tr>
+      <tr><td><b>Microsoft Learn</b></td><td>Microsoft 365 Copilot (IA corporativa), GitHub Copilot, IA responsable, adopción para líderes</td><td>Get started with M365 Copilot · Copilot Use Cases · Transform your business with AI</td></tr>
+      <tr><td><b>SAP Learning</b></td><td>SAP Joule, Generative AI Hub, SAP Business AI aplicado a HCM/SuccessFactors</td><td>Provisioning &amp; Implementing Joule · Joule Agents · Experiencing SAP Business AI</td></tr>
+      <tr><td><b>Elements of AI · Univ. Helsinki</b></td><td>Fundamentos de IA de prestigio internacional, con certificado gratuito</td><td>Introduction to AI · Building AI</td></tr>
+      <tr><td><b>Google Cloud Skills Boost</b></td><td>IA generativa desde nivel ejecutivo a técnico (LLMs, RAG, agentes)</td><td>Introduction to Generative AI · GenAI for Developers</td></tr>
+      <tr><td><b>DeepLearning.AI</b></td><td>Cursos cortos de prompting y automatización de entregables</td><td>Prompt Engineering for Developers · Short Courses</td></tr>
+    </table>
+    </div>
+
+    <div class="grid3" style="margin-top:2.5rem">
+      <div class="card anim"><div class="big-num">4</div><h3>Niveles de progresión</h3>
+        <p>Iniciación · Consultor · Liderazgo de Proyecto/Servicio · Dirección — alineados con las 17 categorías del Nuevo Modelo Organizativo 2026.</p></div>
+      <div class="card anim"><div class="big-num">17</div><h3>Casos prácticos tipo</h3>
+        <p>Un caso práctico definido por categoría: de "5 entregables funcionales con IA" (Analyst) a "hoja de ruta de IA de la práctica" (Director), cada uno con su evidencia y validador.</p></div>
+      <div class="card anim"><div class="big-num">2-6</div><h3>Semanas por formación</h3>
+        <p>Duraciones con peso suficiente para un objetivo anual, evitando cursos de pocas horas sin recorrido.</p></div>
+    </div>
+
+    <div class="card anim" style="margin-top:1.25rem">
+      <h3>Ejemplo — Functional Consultant</h3>
+      <p><b>Formación (elige 1):</b> Generative AI Hub de SAP · Provisioning &amp; Implementing Joule · M365 Copilot Use Cases — más el módulo de IA responsable.<br>
+      <b>Caso práctico:</b> implantar en su proyecto un flujo con IA que automatice un entregable recurrente y adoptarlo como práctica del equipo.<br>
+      <b>Evidencia:</b> flujo documentado (plantilla + prompts) en uso, validado por el Chapter Lead.</p>
+    </div>
+  </div>
+</section>
+
+<hr id="seguimiento">
+<section>
+  <div class="sec-inner">
+    <div class="sec-kicker">03 · Seguimiento y Gobierno</div>
+    <h2>Sin sorpresas en diciembre</h2>
+    <p class="sec-lead">El despliegue se apoya en una herramienta de asignación y seguimiento con los 27 empleados que tienen
+    el objetivo IA asignado ya precargados, junto a su Chapter Lead, cálculo automático del % de objetivo y un cuadro de mando por categoría. La planificación fija
+    hitos intermedios para distribuir el esfuerzo en el segundo semestre.</p>
+
+    <div class="grid2">
+      <div class="card anim"><h3>Herramienta de seguimiento</h3>
+        <ul>
+          <li><b>Asignación empleado–curso</b> con desplegables y estado de formación y caso práctico</li>
+          <li><b>% de objetivo automático</b> (0 / 40 / 60 / 100%) con semáforo visual</li>
+          <li><b>Cuadro de mando</b> por categoría: cursos asignados, completados, certificados y casos validados</li>
+          <li>Validación única por el <b>Chapter Lead</b>, que también comunicó los objetivos a su equipo</li>
+          <li><b>Evidencias</b> (certificado y caso práctico) subidas al perfil personal del empleado en <b>SkillRank</b></li>
+        </ul></div>
+      <div class="card anim"><h3>Hitos de control (3) y cierre</h3>
+        <ul>
+          <li><span class="pill warn">◆ 31 JUL</span>&nbsp; Hito 1 — Curso objetivo iniciado</li>
+          <li><span class="pill warn">◆ 31 OCT</span>&nbsp; Hito 2 — Formación acreditada (40%)</li>
+          <li><span class="pill warn">◆ 31 DIC</span>&nbsp; Hito 3 — Caso práctico presentado al Chapter Lead</li>
+          <li><span class="pill ok">ENE 27</span>&nbsp; Validación del Chapter Lead y cierre (100%)</li>
+        </ul></div>
+    </div>
+
+    <div class="timeline anim">
+      <div class="tl-grid" style="grid-template-columns:210px repeat(7,1fr)">
+        <div></div><div class="tl-h">Jul 26</div><div class="tl-h">Ago 26</div><div class="tl-h">Sep 26</div><div class="tl-h">Oct 26</div><div class="tl-h">Nov 26</div><div class="tl-h">Dic 26</div><div class="tl-h">Ene 27</div>
+        <div class="tl-lbl">Autoevaluación SkillRank (paso 0)</div><div class="tl-cell prep"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-lbl">Elección y asignación</div><div class="tl-cell prep"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-lbl">Formación online</div><div class="tl-cell"></div><div class="tl-cell exec"></div><div class="tl-cell exec"></div><div class="tl-cell exec"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-lbl">Definición caso práctico</div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell prep"></div><div class="tl-cell prep"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-lbl">Ejecución caso práctico</div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell exec"></div><div class="tl-cell exec"></div><div class="tl-cell"></div>
+        <div class="tl-lbl">Validación y cierre</div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell done"></div>
+        <div class="tl-lbl" style="color:var(--accent-warn)">◆ Hitos de control</div>
+        <div class="tl-cell hito-dot"><span title="H1 · 31 jul · Curso iniciado"></span></div>
+        <div class="tl-cell"></div>
+        <div class="tl-cell"></div>
+        <div class="tl-cell hito-dot"><span title="H2 · 31 oct · Formación acreditada"></span></div>
+        <div class="tl-cell"></div>
+        <div class="tl-cell hito-dot"><span title="H3 · 31 dic · Caso práctico presentado"></span></div>
+        <div class="tl-cell"></div>
+      </div>
+      <div class="legend">
+        <span><span class="dot" style="background:rgba(0,162,255,.35)"></span>Preparación</span>
+        <span><span class="dot" style="background:rgba(0,162,255,.75)"></span>Ejecución</span>
+        <span><span class="dot" style="background:var(--accent-ok)"></span>Validación y cierre (enero)</span>
+        <span><span class="dot" style="background:var(--accent-warn);border-radius:50%"></span>◆ Hito de control: H1 curso iniciado (31 jul) · H2 formación acreditada (31 oct) · H3 caso presentado (31 dic)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-box" id="decision">
+  <div class="cta-inner">
+    <div class="sec-kicker" style="justify-content:center">04 · Decisión solicitada</div>
+    <h2>Aprobación para el despliegue en el CC People</h2>
+    <p class="sec-lead" style="margin:0 auto">Se solicita la aprobación de los siguientes puntos para aplicar el modelo a los empleados del CC People con el objetivo «Formación en IA» asignado:</p>
+    <div class="decision-list">
+      <div class="d-item anim"><div class="n">1</div><p><b>El modelo del objetivo</b> — formación externa acreditada (40%) + caso práctico validado (60%), vinculado al salario variable 2026.</p></div>
+      <div class="d-item anim"><div class="n">2</div><p><b>El catálogo formativo</b> — 23 formaciones externas, gratuitas y online, con opciones por categoría profesional.</p></div>
+      <div class="d-item anim"><div class="n">3</div><p><b>El calendario e hitos</b> — actividades de julio a diciembre 2026 (3 hitos de control) y validación y cierre por el Chapter Lead en enero de 2027.</p></div>
+      <div class="d-item anim"><div class="n">4</div><p><b>El modelo de gobierno</b> — validación por el Chapter Lead (quien comunicó los objetivos) y seguimiento mensual mediante el cuadro de mando por categoría.</p></div>
+    </div>
+    <p style="margin-top:2.5rem;font-size:.9rem;color:var(--grey-1)">Tras la aprobación: comunicación al CC People,
+    registro del objetivo en el sistema de desempeño y primera revisión de avance el 31 de agosto.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="fl">stratesys</div>
+  <div class="fc"><a href="https://www.stratesys-ts.com">stratesys-ts.com</a></div>
+  <div class="fd">Documento interno · Centro de Competencia People · 2026 · Uso exclusivo y confidencial — prohibida su reproducción o difusión sin autorización expresa de Stratesys</div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.anim').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
